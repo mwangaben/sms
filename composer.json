@@ -1,0 +1,25 @@
+{
+    "name": "mwangaben/sms",
+    "description": "Laravel Wrapper SMS API",
+    "type": "package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mwangaben\\SMS\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Benedict Mwanga",
+            "email": "mwangaben@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mwangaben\\SMS\\SMSServiceProvider"
+            ]
+        }
+    },
+    "require": {}
+}
