@@ -21,4 +21,10 @@ class SMSServiceProvider extends ServiceProvider
             return new SMSApi();
         });
     }
+
+
+    public static function me()
+    {
+        return __DIR__ .'/config/smsapi.php';
+    }
 }

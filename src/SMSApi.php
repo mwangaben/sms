@@ -24,4 +24,14 @@ class SMSApi
                 "message"   => $message
             ]);
     }
+
+
+    /**
+     * @param $response
+     * @return bool
+     */
+    public static function sent($response): bool
+    {
+        return $response->json('status') === "success";
+    }
 }

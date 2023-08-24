@@ -8,6 +8,11 @@
             "Mwangaben\\SMS\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Mwangaben\\SMS\\Tests\\": "tests"
+        }
+    },
     "authors": [
         {
             "name": "Benedict Mwanga",
@@ -21,5 +26,27 @@
             ]
         }
     },
-    "require": {}
+    "require-dev": {
+        "orchestra/testbench": "^8.9",
+        "phpunit/phpunit": "^10.3",
+        "illuminate/support": "*",
+        "illuminate/contracts": "*"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "@build",
+            "@php vendor/bin/testbench serve"
+        ],
+        "test": "@php vendor/bin/phpunit"
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.7"
+    }
 }
